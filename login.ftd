@@ -1,0 +1,54 @@
+-- import: fastn-test-multiauth/user-details as user
+
+-- ftd.redirect: /
+code: 307
+if: { user.is-logged-in }
+
+
+
+-- string $username: empty
+-- string $password: empty
+
+-- ftd.http-options opts:
+redirect: follow
+method: POST
+fastn-module: test-multiauth
+
+-- ftd.column:
+padding.px: 16
+
+-- ftd.text: Login Form
+padding-bottom.px: 16
+
+-- ftd.text-input:
+placeholder: username
+type: text
+$on-input$: $ftd.set-string($a = $username, v = $VALUE)
+
+
+-- ftd.text-input:
+placeholder: password
+type: password
+$on-input$: $ftd.set-string($a = $password, v = $VALUE)
+
+
+-- ftd.text: Login
+padding-top.px: 16
+$on-click$: $submit(username = $username, password = $password, opts = $opts)
+
+-- ftd.text: or [login using github](/-/auth/login/?provider=github&next=/)
+
+-- end: ftd.column
+
+-- void submit(username, password, opts):
+string username:
+string password:
+ftd.http-options opts:
+
+ftd.http(
+    "/-/auth/login/?provider=emailpassword",
+    opts,
+    ("username", username),
+    ("password", password),
+)
+

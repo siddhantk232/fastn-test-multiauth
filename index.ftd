@@ -1,0 +1,25 @@
+-- import: fastn-test-multiauth/user-details as user
+
+;; UI
+
+-- ftd.column:
+
+-- ftd.text: click to [Login](/login/) or [Sign up](/register/)
+text if { user.is-logged-in }: $user.name
+
+-- ftd.row:
+if: { user.is-logged-in  }
+-- ftd.text: username:
+margin-right.px: 4
+
+-- ftd.text: $user.username
+-- end: ftd.row
+
+-- ftd.text: $user.email
+
+-- ftd.text: [Logout](/-/auth/logout/?next=/)
+margin-top.px: 16
+if: { user.is-logged-in }
+
+-- end: ftd.column
+

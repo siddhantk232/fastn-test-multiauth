@@ -1,0 +1,62 @@
+-- string $name: empty
+-- string $email: empty
+-- string $password: empty
+-- string $username: empty
+
+-- ftd.http-options opts:
+redirect: follow
+method: POST
+fastn-module: test-multiauth
+
+-- ftd.column:
+padding.px: 16
+
+-- ftd.text: Register Form
+padding-bottom.px: 16
+
+-- ftd.text-input:
+placeholder: name
+type: text
+$on-input$: $ftd.set-string($a = $name, v = $VALUE)
+
+-- ftd.text-input:
+placeholder: email
+type: email
+$on-input$: $ftd.set-string($a = $email, v = $VALUE)
+
+-- ftd.text-input:
+placeholder: username
+type: text
+$on-input$: $ftd.set-string($a = $username, v = $VALUE)
+
+
+-- ftd.text-input:
+placeholder: password
+type: password
+$on-input$: $ftd.set-string($a = $password, v = $VALUE)
+
+
+-- ftd.text: Sign up
+padding-top.px: 16
+$on-click$: $submit(name = $name, email = $email, username = $username, password = $password, opts = $opts)
+
+-- ftd.text: or [login using github](/-/auth/login/?provider=github&next=/)
+
+-- end: ftd.column
+
+-- void submit(name, email, username, password, opts):
+string name:
+string email:
+string username:
+string password:
+ftd.http-options opts:
+
+ftd.http(
+    "/-/auth/create-user/",
+    opts,
+    ("username", username),
+    ("password", password),
+    ("name", name),
+    ("email", email),
+)
+

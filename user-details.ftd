@@ -1,0 +1,22 @@
+-- import: fastn/processors as pr
+
+;; DATA
+
+-- user-details user:
+$processor$: pr.user-details
+
+;; TYPES
+
+-- record user-details:
+boolean is-logged-in:
+string name:
+string email:
+string username:
+
+
+
+-- boolean is-logged-in: $user.is-logged-in
+-- string name: $user.name
+-- string email: $user.email
+-- string username: $user.username
+
