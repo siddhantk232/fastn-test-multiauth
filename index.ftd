@@ -2,9 +2,10 @@
 
 ;; UI
 
+
 -- ftd.column:
 
--- ftd.text: click to [Login](/login/) or [Sign up](/register/)
+-- ftd.text: click to [Login](/login/) or [Signup](/register/)
 text if { user.is-logged-in }: $user.name
 
 -- ftd.row:
@@ -16,6 +17,7 @@ margin-right.px: 4
 -- end: ftd.row
 
 -- ftd.text: $user.email
+if: { user.is-logged-in }
 
 -- ftd.text: [Logout](/-/auth/logout/?next=/)
 margin-top.px: 16

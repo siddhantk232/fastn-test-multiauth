@@ -2,3 +2,7 @@
 
 -- fastn.package: fastn-test-multiauth
 
+
+-- fastn.auto-import: fastn-test-multiauth/authy as auth
+
+
