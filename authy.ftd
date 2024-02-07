@@ -1,6 +1,7 @@
 -- string test: fsdkjflk
 
 -- string confirmation-mail-html:
+$always-include$: true
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +10,7 @@
     <title>Confirm your email</title>
 </head>
 <body>
-    <h1>Hello there</h1>
+    <h1>Hello, meine freunden</h1>
     <a href="{{link}}">Click on this text to confirm your email</a>
 </body>
 </html>
