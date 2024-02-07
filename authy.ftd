@@ -1,3 +1,20 @@
+-- string test: fsdkjflk
+
+-- string confirmation-mail-html:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm your email</title>
+</head>
+<body>
+    <h1>Hello there</h1>
+    <a href="{{link}}">Click on this text to confirm your email</a>
+</body>
+</html>
+
+
 -- component email-confirmation-request-sent:
 
 -- ftd.column:
