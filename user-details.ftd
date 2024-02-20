@@ -12,10 +12,12 @@ boolean is-logged-in:
 string name:
 string email:
 string username:
+boolean verified-email:
 
 
 
 -- boolean is-logged-in: $user.is-logged-in
+-- boolean verified-email: $user.verified-email
 -- string name: $user.name
 -- string email: $user.email
 -- string username: $user.username

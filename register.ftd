@@ -40,7 +40,7 @@ $on-input$: $ftd.set-string($a = $password, v = $VALUE)
 padding-top.px: 16
 $on-click$: $submit(name = $name, email = $email, username = $username, password = $password, opts = $opts)
 
--- ftd.text: or [login using github](/-/auth/login/?provider=github&next=/)
+-- ftd.text: or [login using github](/-/auth/github/)
 
 -- end: ftd.column
 
@@ -52,7 +52,7 @@ string password:
 ftd.http-options opts:
 
 ftd.http(
-    "/-/auth/create-user/",
+    "/-/auth/create-account/",
     opts,
     ("username", username),
     ("password", password),

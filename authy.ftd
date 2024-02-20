@@ -1,3 +1,5 @@
+-- import: fastn-test-multiauth/set-password as set-password
+
 -- string test: fsdkjflk
 
 -- string confirmation-mail-html:
@@ -12,6 +14,21 @@ $always-include$: true
 <body>
     <h1>Hello, meine freunden</h1>
     <a href="{{link}}">Click on this text to confirm your email</a>
+</body>
+</html>
+
+-- string reset-password-request-mail-html:
+$always-include$: true
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm your email</title>
+</head>
+<body>
+    <h1>Hello, meine freunden</h1>
+    <a href="{{link}}">Click on this text to reset your email</a>
 </body>
 </html>
 
@@ -42,3 +59,19 @@ This is useful for doing onboarding stuff. collecting extra information about th
 -- end: ftd.column
 
 -- end: onboarding
+
+-- component set-password-form-page:
+-- set-password.form:
+-- end: set-password-form-page
+
+-- component set-password-success-page:
+-- set-password.success:
+-- end: set-password-success-page
+
+-- component forgot-password-form-page:
+-- set-password.forgot-form:
+-- end: forgot-password-form-page
+
+-- component forgot-password-request-email-sent-page:
+-- set-password.check-mail:
+-- end: forgot-password-request-email-sent-page

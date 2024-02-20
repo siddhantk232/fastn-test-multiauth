@@ -8,6 +8,14 @@
 -- ftd.text: click to [Login](/login/) or [Signup](/register/)
 text if { user.is-logged-in }: $user.name
 
+-- ftd.column:
+if: { user.is-logged-in }
+
+-- ftd.text: you're verified
+text if { !user.verified-email }: you're unverified
+
+-- end: ftd.column
+
 -- ftd.row:
 if: { user.is-logged-in  }
 -- ftd.text: username:
