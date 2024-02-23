@@ -56,6 +56,8 @@ ftd.http(
     opts,
     ("username", username),
     ("password", password),
+    ("password2", password),
+    ("accept_terms", true),
     ("name", name),
     ("email", email),
 )

@@ -2,7 +2,6 @@
 
 ;; UI
 
-
 -- ftd.column:
 
 -- ftd.text: click to [Login](/login/) or [Signup](/register/)
@@ -13,6 +12,10 @@ if: { user.is-logged-in }
 
 -- ftd.text: you're verified
 text if { !user.verified-email }: you're unverified
+
+-- ftd.text: Get conf mail?
+if: { !user.verified-email }
+link: $email-link(email = $user.email)
 
 -- end: ftd.column
 
@@ -32,4 +35,9 @@ margin-top.px: 16
 if: { user.is-logged-in }
 
 -- end: ftd.column
+
+-- string email-link(email):
+string email:
+
+"/-/auth/resend-confirmation-email/?next=/&email=" + email
 
